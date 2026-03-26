@@ -1,79 +1,213 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Jeux Scratch </title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #fff1b6;
-            color: fe6c00;
-            text-align: center;
-            margin: 0;
-        }
-        header {         
-                    
-    background-image: url('baniere.jpg');
-    background-size: cover;         
-    background-repeat: no-repeat;
-    color: #fff1b6;
-    padding: 60px 20px;
-    text-align: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeux Scratch - EPN</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff1b6;
+    color: #333;
 }
-        }
-        h1 {
-            margin: 0;
-        }
-        .container {
-            padding: 20px;
-        }
-        .game {
-            background: white;
-            margin: 15px auto;
-            padding: 15px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        a {
-            text-decoration: none;
-            color: #fe6c00;
-            font-weight: bold;
-        }
-        a:hover {
-            color: #0056b3;
-        }
-    </style>
+
+header {
+    background-image: url('images/baniere.png');
+	 background-size: cover;
+    color: #fff1b6;
+    -webkit-text-stroke: 2px black;
+    text-align: center;
+    padding: 30px 15px;
+	font-size: 22px;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.game-card:hover {
+    transform: scale(1.02);
+}
+
+/* IMAGE CLIQUABLE */
+.game-card img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.game-card img:hover {
+    opacity: 0.9;
+}
+
+/* BOUTON */
+.play-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 12px;
+    background: #fe6c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.play-btn:hover {
+    background: #f6a264;
+}
+
+/* MOBILE OPTIMISÉ */
+@media (max-width: 600px) {
+    .play-btn {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: #fe6c00;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1> Jeux en scratch</h1>
-    <p>Découvrez les mini-jeux réalisés par les jeunes de l'EPN de Manage !</p>
+    <h1>🎮 Jeux Scratch</h1>
+	<h1>Découvrez les mini-jeux réalisés par les jeunes de l'EPN de Manage !</h1>
+    
 </header>
+<a class="play-btn">Ces jeux ont été réalisés en un petit après-midi par des ados qui n’avaient pour la plupart aucune notion de programmation!</a>
 
 <div class="container">
- <p>Ces jeux ont été réalisés en un petit après-midi par des ados qui n’avaient pour la plupart aucune notion de programmation!</p>
-    <div class="game">
-        <h2> flappy (Téo)</h2>
-        <p>▶cliquer sur le drapeau vert en haut à gauche puis la barre d'espace pour faire voler l'oiseau</p>
-        <a href="Flappy Bird (Téo).html">▶ Jouer</a>
-    </div>
+<section class="games">
 
-    <div class="game">
-        
-        <h2>labyrinthe (Baptyste)</h2>
-        <p>▶cliquer sur le drapeau vert en haut à gauche puis utiliser les flèche pour vous diriger (attention ne toucher pas les murs) </p>
-        <a href="maze.html">▶ Jouer</a>
-    </div>
+<!-- JEU 1 -->
+<div class="game-card">
+    <h2>🐦 Flappy</h2>
+    <p><strong>Créé par :</strong> Téo (14)</p>
+    <p>Cliquer sur le drapeau vert en haut à gauche puis sur la barre d'espace pour faire voler l'oiseau.<br><br></p>
 
-    <div class="game">
-        <h2>Floppy bird (Luis)</h2>
-        <p>▶cliquer sur le drapeau vert en haut à gauche puis la barre d'espace pour faire voler l'oiseau</p>
-        <a href="floppy 3.html">▶ Jouer</a>
-    </div>
+    <a href="jeux/Flappy Bird (Téo).html">
+        <img src="images/flappy t.png" alt="Aperçu du jeu">
+    </a>
 
+    <a class="play-btn" href="jeux/Flappy Bird (Téo).html">▶ Jouer</a>
 </div>
+
+<!-- JEU 2 -->
+<div class="game-card">
+    <h2>🌀 Labyrinthe</h2>
+    <p><strong>Créé par :</strong> Baptyste (15)</p>
+    <p>Cliquer sur le drapeau vert puis utiliser les flèche pour vous diriger (attention ne toucher pas les murs).</p>
+
+    <a href="jeux/maze.html">
+        <img src="images/maze.png" alt="Aperçu du jeu">
+    </a>
+
+    <a class="play-btn" href="jeux/maze.html">▶ Jouer</a>
+</div>
+
+<!-- JEU 3 -->
+<div class="game-card">
+    <h2>🐦️ Floppy bird</h2>
+    <p><strong>Créé par :</strong> Luis (12)</p>
+    <p>Cliquer sur le drapeau vert puis la barre d'espace pour faire voler l'oiseau.<br><br></p>
+	
+   <a href="jeux/floppy 3.html">
+        <img src="images/floppy.png" alt="Aperçu du jeu">
+    </a>
+
+    <a class="play-btn" href="jeux/floppy 3.html">▶ Jouer</a>
+</div>
+
+<!-- JEU 4 -->
+<div class="game-card">
+    <h2>🧠 Jeu 4</h2>
+    <p><strong>Créé par :</strong> Prénom (âge)</p>
+    <p>Petit descriptif du jeu</p>
+
+    <a href="jeu4.html">
+        <img src="images/jeu4.png" alt="Aperçu du jeu">
+    </a>
+
+    <a class="play-btn" href="jeu4.html">▶ Jouer</a>
+</div>
+
+<!-- JEU 5 -->
+<div class="game-card">
+    <h2>🎯 Jeu 5</h2>
+    <p><strong>Créé par :</strong> Prénom (âge)</p>
+    <p>Petit descriptif du jeu</p>
+
+    <a href="jeu5.html">
+        <img src="images/jeu5.png" alt="Aperçu du jeu">
+    </a>
+
+    <a class="play-btn" href="jeu5.html">▶ Jouer</a>
+</div>
+
+<!-- JEU 6 -->
+<div class="game-card">
+    <h2>🐉 Jeu 6</h2>
+    <p><strong>Créé par :</strong> Prénom (âge)</p>
+    <p>Petit descriptif du jeu</p>
+
+    <a href="jeu6.html">
+        <img src="images/jeu6.png" alt="Aperçu du jeu">
+    </a>
+
+    <a class="play-btn" href="jeu6.html">▶ Jouer</a>
+</div>
+
+<!-- JEU 7 (optionnel) -->
+<div class="game-card">
+    <h2>🌟 Jeu 7</h2>
+    <p><strong>Créé par :</strong> Prénom (âge)</p>
+    <p>Petit descriptif du jeu</p>
+
+    <a href="jeu7.html">
+        <img src="images/jeu7.png" alt="Aperçu du jeu">
+    </a>
+
+    <a class="play-btn" href="jeu7.html">▶ Jouer</a>
+</div>
+
+</section>
+</div>
+
+<footer>
+    <p>2026 - EPN Manage | Atelier Scratch</p>
+</footer>
 
 </body>
 </html>
+```
